@@ -8,9 +8,7 @@ const ListingPage: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Navigation />
-      <Container maxWidth="md">
-        <Box sx={{ bgcolor: "red", height: "100vh" }} />
-      </Container>
+      <Container maxWidth="md">{children}</Container>
     </>
   );
 };

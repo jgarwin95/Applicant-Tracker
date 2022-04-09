@@ -1,11 +1,11 @@
 import "./App.css";
-import ListingPage from "./features/templates/ListingPage";
+import ApplicantsPage from "./features/applicantsPage/ApplicantsPage";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ListingPage></ListingPage>
+        <ApplicantsPage />
       </header>
     </div>
   );
