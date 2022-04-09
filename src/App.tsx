@@ -1,13 +1,17 @@
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import "./App.css";
 import ApplicantsPage from "./features/applicantsPage/ApplicantsPage";
+import { theme } from "./themes/Theme";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ApplicantsPage />
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header className="App-header">
+          <ApplicantsPage />
+        </header>
+      </div>
+    </ThemeProvider>
   );
 }
 
