@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box";
+import { Paper } from "@mui/material";
 import Container from "@mui/material/Container";
 import React from "react";
 import Navigation from "./Navigation";
@@ -8,7 +8,11 @@ const ListingPage: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Navigation />
-      <Container maxWidth="md">{children}</Container>
+      <Container maxWidth="md" sx={{ height: "100vh" }}>
+        <Paper sx={{ height: "100%", margin: "10px", padding: "20px" }}>
+          {children}
+        </Paper>
+      </Container>
     </>
   );
 };

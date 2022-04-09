@@ -39,7 +39,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <AppBar position="fixed" color="primary">
+    <AppBar position="sticky" color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
