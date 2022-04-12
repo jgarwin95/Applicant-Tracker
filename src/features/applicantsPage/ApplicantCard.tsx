@@ -14,9 +14,10 @@ const ApplicantCard: React.FC<Props> = ({ session }) => {
           height: 140,
           width: 1,
         }}
-      />
-      {session.title}
-      {session.dateCreated.toUTCString()}
+      >
+        {session.title}
+        {session.dateCreated}
+      </Paper>
     </Grid>
   );
 };

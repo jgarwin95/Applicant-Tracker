@@ -4,7 +4,7 @@ export type SessionsResponse = {
 
 export type Session = {
   title: string;
-  dateCreated: Date;
+  dateCreated: string;
   applicants: Applicant[];
   interviewers: Interviewer[];
 };

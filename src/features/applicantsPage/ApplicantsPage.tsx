@@ -1,6 +1,31 @@
 import { Grid, Paper } from "@mui/material";
 import React from "react";
 import ListingPage from "../templates/ListingPage";
+import ApplicantCard from "./ApplicantCard";
+import { Session } from "./types";
+
+var today = new Date();
+
+const dummyData: Session[] = [
+  {
+    title: "GFF Interviews 2022",
+    dateCreated: today.toLocaleDateString("en-US"),
+    applicants: [],
+    interviewers: [],
+  },
+  {
+    title: "GFF Interviews 2021",
+    dateCreated: today.setFullYear(today.getFullYear() - 1).toString(),
+    applicants: [],
+    interviewers: [],
+  },
+  {
+    title: "GFF Interviews 2020",
+    dateCreated: today.setFullYear(today.getFullYear() - 1).toString(),
+    applicants: [],
+    interviewers: [],
+  },
+];
 
 interface Props {}
 
@@ -14,17 +39,8 @@ const ApplicantsPage: React.FC<Props> = () => {
         alignItems="flex-start"
         spacing={2}
       >
-        {[0, 1, 2].map((value) => (
-          <Grid key={value} item>
-            <Paper
-              sx={{
-                height: 140,
-                width: 1,
-                backgroundColor: (theme) =>
-                  theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-              }}
-            />
-          </Grid>
+        {dummyData.map((session) => (
+          <ApplicantCard session={session} />
         ))}
       </Grid>
     </ListingPage>
