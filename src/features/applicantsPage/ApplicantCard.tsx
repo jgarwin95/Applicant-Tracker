@@ -10,11 +10,11 @@ interface Props {
 }
 const ApplicantCard: React.FC<Props> = ({ session }) => {
   return (
-    <Grid item>
+    <Grid item sx={{ width: "100%" }}>
       <Paper
         sx={{
           height: 140,
-          width: 1,
+          width: "100%",
         }}
       >
         <Box
