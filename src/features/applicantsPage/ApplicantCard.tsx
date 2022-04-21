@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import React from "react";
 import { Session } from "./types";
+import "./ApplicantCard.css";
 
 interface Props {
   session: Session;
@@ -14,32 +15,21 @@ const ApplicantCard: React.FC<Props> = ({ session }) => {
       <Paper
         sx={{
           height: 140,
-          width: "100%",
+          paddingLeft: "20px",
+          paddingRight: "20px",
         }}
       >
-        <Box
-          sx={{
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            sx={{
-              flexDirection: "column",
-              justifyContent: "space-around",
-              alignItems: "center",
-            }}
-          >
-            <Box>{session.title}</Box>
-            <Box>{session.dateCreated}</Box>
-          </Box>
-          <Box>
+        <div id="applicant-card">
+          <div id="title-date-holder">
+            <div>{session.title}</div>
+            <div>{session.dateCreated}</div>
+          </div>
+          <div id="button-holder">
             <Button variant="contained" size="medium">
               Join Session
             </Button>
-          </Box>
-        </Box>
+          </div>
+        </div>
       </Paper>
     </Grid>
   );
