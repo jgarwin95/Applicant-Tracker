@@ -6,7 +6,7 @@ import {
   ValidationErrors,
 } from "../../api/applicants";
 import { RootState } from "../../app/store";
-import { Applicant } from "../applicantsPage/types";
+import { Applicant } from "./types";
 
 export const getApplicantsList = createAsyncThunk<
   FetchApplicantsResponse,
@@ -29,7 +29,7 @@ export const getApplicantsList = createAsyncThunk<
 
 export type ApplicantsListState = {
   applicantsList: Applicant[];
-  fetchApplicantsListStatus: "idle" | "loading" | "failed";
+  fetchApplicantsListStatus: "idle" | "loading" | "failed" | "succeeded";
   fetchApplicantsError: string | null;
 };
 
@@ -52,19 +52,26 @@ export const applicantListSlice = createSlice({
       })
       .addCase(getApplicantsList.fulfilled, (state, action) => {
         if (state.fetchApplicantsListStatus === "loading") {
-          state.fetchApplicantsListStatus = "idle";
+          state.fetchApplicantsListStatus = "succeeded";
           state.applicantsList = action.payload.applicants;
         }
       })
       .addCase(getApplicantsList.rejected, (state, action) => {
         if (state.fetchApplicantsListStatus === "loading") {
-          state.fetchApplicantsListStatus = "idle";
+          state.fetchApplicantsListStatus = "failed";
           state.fetchApplicantsError = action.payload?.errorMessage || null;
         }
       });
   },
 });
 
-export const selectCount = (state: RootState) => state.counter.value;
+export const selectApplicantList = (state: RootState) =>
+  state.applicantList.applicantsList;
+
+export const selectFetchApplicantsListStatus = (state: RootState) =>
+  state.applicantList.fetchApplicantsListStatus;
+
+export const selectFetchApplicantsError = (state: RootState) =>
+  state.applicantList.fetchApplicantsError;
 
 export default applicantListSlice.reducer;

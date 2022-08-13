@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Applicant } from "../features/applicantsPage/types";
+import { Applicant } from "../features/applicantsList/types";
 
 export type FetchApplicantsResponse = {
   applicants: Applicant[];

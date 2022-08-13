@@ -1,14 +1,10 @@
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import React from "react";
-import { Session } from "./types";
 import "./ApplicantCard.css";
 import { IconButton, InputBase } from "@mui/material";
 
-interface Props {
-  session: Session;
-}
-const SearchPanel: React.FC<Props> = ({ session }) => {
+const SearchPanel = () => {
   return (
     <Grid item sx={{ width: "100%" }}>
       <Paper

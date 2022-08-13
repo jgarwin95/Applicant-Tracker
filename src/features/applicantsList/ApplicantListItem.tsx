@@ -1,14 +1,14 @@
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import React from "react";
-import { Session } from "./types";
 import "./ApplicantCard.css";
+import { Applicant } from "./types";
 
-interface Props {
-  session: Session;
-}
-const ApplicantCard: React.FC<Props> = ({ session }) => {
+type ApplicantListItemProps = {
+  applicant: Applicant;
+};
+
+const ApplicantListItem = ({ applicant }: ApplicantListItemProps) => {
   return (
     <Grid item sx={{ width: "100%" }}>
       <Paper
@@ -20,12 +20,12 @@ const ApplicantCard: React.FC<Props> = ({ session }) => {
       >
         <div id="applicant-card">
           <div id="title-date-holder">
-            <div>{session.title}</div>
-            <div>{session.dateCreated}</div>
+            <div>{applicant.name}</div>
+            <div>{applicant.email}</div>
           </div>
           <div id="button-holder">
             <Button variant="contained" size="medium">
-              Join Session
+              View profile
             </Button>
           </div>
         </div>
@@ -34,4 +34,4 @@ const ApplicantCard: React.FC<Props> = ({ session }) => {
   );
 };
 
-export default ApplicantCard;
+export default ApplicantListItem;
