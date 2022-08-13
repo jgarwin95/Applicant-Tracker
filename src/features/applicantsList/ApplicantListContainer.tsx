@@ -19,7 +19,7 @@ const ApplicantListContainer = () => {
   // perform data fetching on initial mount of container
   useEffect(() => {
     dispatch(getApplicantsList());
-  });
+  }, [dispatch]);
 
   if (loadingStatus === "idle") {
     return <></>;
