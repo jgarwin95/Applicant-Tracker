@@ -4,7 +4,7 @@ import PageHeader from "../../sharedComponents/PageHeader";
 
 const ApplicantsPage = () => {
   return (
-    <ListingPage header={<PageHeader />}>
+    <ListingPage header={<PageHeader headerText="Applicants" />}>
       <ApplicantListContainer />
     </ListingPage>
   );
