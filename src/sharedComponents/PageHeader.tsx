@@ -10,13 +10,17 @@ const PageHeader = ({ headerText, fullWidth = false }: PageHeaderProps) => {
     <Container
       maxWidth="xl"
       disableGutters={true}
-      sx={{ minHeight: "125px", borderBottom: 1, borderColor: "#b0b0b0" }}
+      sx={{
+        minHeight: "125px",
+        borderBottom: 1,
+        borderColor: "#b0b0b0",
+      }}
     >
       <Container
         maxWidth={fullWidth ? "xl" : "md"}
         disableGutters={true}
         sx={{
-          height: "100%",
+          minHeight: "125px",
           width: "100%",
           display: "flex",
           flexDirection: "row",
@@ -24,7 +28,7 @@ const PageHeader = ({ headerText, fullWidth = false }: PageHeaderProps) => {
           alignItems: "flex-end",
         }}
       >
-        <h1 style={{ marginBottom: 0 }}>{headerText}</h1>
+        <h1>{headerText}</h1>
       </Container>
     </Container>
   );
