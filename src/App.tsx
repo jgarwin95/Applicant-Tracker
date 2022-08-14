@@ -7,10 +7,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <header className="App-header">
-          {/* Put your Router here when ready */}
-          <ApplicantsPage />
-        </header>
+        <ApplicantsPage />
       </div>
     </ThemeProvider>
   );
