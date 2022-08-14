@@ -1,7 +1,6 @@
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import React from "react";
-import "./ApplicantCard.css";
 import { IconButton, InputBase } from "@mui/material";
 
 const SearchPanel = () => {
