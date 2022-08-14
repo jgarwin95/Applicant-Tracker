@@ -1,9 +1,10 @@
 import ApplicantListContainer from "../applicantsList/ApplicantListContainer";
 import ListingPage from "../../sharedComponents/ListingPage";
+import PageHeader from "../../sharedComponents/PageHeader";
 
 const ApplicantsPage = () => {
   return (
-    <ListingPage>
+    <ListingPage header={<PageHeader />}>
       <ApplicantListContainer />
     </ListingPage>
   );
