@@ -4,9 +4,14 @@ import Navigation from "./Navigation";
 
 type ListingPageProps = {
   header?: JSX.Element;
+  fullWidth?: boolean;
 };
 
-const ListingPage: React.FC<ListingPageProps> = ({ header, children }) => {
+const ListingPage: React.FC<ListingPageProps> = ({
+  header,
+  fullWidth = false,
+  children,
+}) => {
   return (
     <Container
       maxWidth="xl"
@@ -14,12 +19,8 @@ const ListingPage: React.FC<ListingPageProps> = ({ header, children }) => {
       sx={{ width: "100%", height: "100%" }}
     >
       <Navigation />
-      {header}
-      <Container
-        maxWidth="md"
-        disableGutters={true}
-        sx={{ height: "100px", border: 1 }}
-      >
+      {header && React.cloneElement(header, { fullWidth })}
+      <Container maxWidth={fullWidth ? "xl" : "md"} disableGutters={true}>
         {children}
       </Container>
     </Container>
