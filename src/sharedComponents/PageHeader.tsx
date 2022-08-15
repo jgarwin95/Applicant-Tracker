@@ -2,10 +2,15 @@ import { Container } from "@mui/material";
 
 type PageHeaderProps = {
   headerText: string;
+  actionItem?: JSX.Element;
   fullWidth?: boolean;
 };
 
-const PageHeader = ({ headerText, fullWidth = false }: PageHeaderProps) => {
+const PageHeader = ({
+  headerText,
+  actionItem,
+  fullWidth = false,
+}: PageHeaderProps) => {
   return (
     <Container
       maxWidth="xl"
@@ -27,9 +32,11 @@ const PageHeader = ({ headerText, fullWidth = false }: PageHeaderProps) => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "flex-end",
+          paddingBottom: "22px",
         }}
       >
-        <h1>{headerText}</h1>
+        <h1 style={{ marginBottom: 0 }}>{headerText}</h1>
+        {actionItem}
       </Container>
     </Container>
   );
