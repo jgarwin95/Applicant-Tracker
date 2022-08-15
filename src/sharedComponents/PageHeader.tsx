@@ -14,6 +14,7 @@ const PageHeader = ({ headerText, fullWidth = false }: PageHeaderProps) => {
         minHeight: "125px",
         borderBottom: 1,
         borderColor: "#b0b0b0",
+        marginBottom: "15px",
       }}
     >
       <Container

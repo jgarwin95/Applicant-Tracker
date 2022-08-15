@@ -24,8 +24,18 @@ const ApplicantListItem = ({ applicant, key }: ApplicantListItemProps) => {
         </Button>
       }
       disablePadding
+      sx={{
+        border: 1,
+        borderColor: "#b0b0b0",
+        minHeight: "100px",
+      }}
     >
-      <ListItemButton>
+      <ListItemButton
+        disableRipple={true}
+        sx={{
+          minHeight: "100px",
+        }}
+      >
         <ListItemAvatar>
           <Avatar
             alt={`Avatar n°${key + 1}`}

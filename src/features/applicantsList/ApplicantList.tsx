@@ -8,7 +8,7 @@ type ApplicantListProps = {
 
 const ApplicantList = ({ applicants }: ApplicantListProps) => {
   return (
-    <List dense sx={{ width: "100%", bgcolor: "white" }}>
+    <List dense disablePadding={true} sx={{ width: "100%" }}>
       {applicants.map((applicant, key) => {
         return <ApplicantListItem key={key} applicant={applicant} />;
       })}
