@@ -1,6 +1,5 @@
 import Container from "@mui/material/Container";
 import React from "react";
-import Navigation from "./Navigation";
 
 type ListingPageProps = {
   header?: JSX.Element;
@@ -18,7 +17,6 @@ const ListingPage: React.FC<ListingPageProps> = ({
       disableGutters={true}
       sx={{ width: "100%", height: "100%" }}
     >
-      <Navigation />
       {header && React.cloneElement(header, { fullWidth })}
       <Container maxWidth={fullWidth ? "xl" : "md"} disableGutters={true}>
         {children}

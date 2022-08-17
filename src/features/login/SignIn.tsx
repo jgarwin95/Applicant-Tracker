@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import Typography from "./modules/components/Typography";
 import AppFooter from "./modules/views/AppFooter";
-import AppAppBar from "./modules/views/AppAppBar";
 import AppForm from "./modules/views/AppForm";
 import { email, required } from "./modules/form/validation";
 import RFTextField from "./modules/form/RFTextField";
@@ -33,7 +32,6 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      <AppAppBar />
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">
